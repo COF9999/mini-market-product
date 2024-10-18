@@ -1,0 +1,7 @@
+/home/christian09/Documents/bases-de-datos-II/Backend/items-db-II/src/main/java/com/api_rest/items_db_II/ItemsDbIiApplication.java
+/home/christian09/Documents/bases-de-datos-II/Backend/items-db-II/src/main/java/com/api_rest/items_db_II/config/ConfigSpring.java
+/home/christian09/Documents/bases-de-datos-II/Backend/items-db-II/src/main/java/com/api_rest/items_db_II/controllers/ProductControllerRest.java
+/home/christian09/Documents/bases-de-datos-II/Backend/items-db-II/src/main/java/com/api_rest/items_db_II/domain/repository/ProductRepository.java
+/home/christian09/Documents/bases-de-datos-II/Backend/items-db-II/src/main/java/com/api_rest/items_db_II/domain/service/ProductServiceImpl.java
+/home/christian09/Documents/bases-de-datos-II/Backend/items-db-II/src/main/java/com/api_rest/items_db_II/domain/service/interfaces/ProductService.java
+/home/christian09/Documents/bases-de-datos-II/Backend/items-db-II/src/main/java/com/api_rest/items_db_II/models/Product.java

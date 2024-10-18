@@ -1,0 +1,7 @@
+com/api_rest/items_db_II/domain/repository/ProductRepository.class
+com/api_rest/items_db_II/domain/service/interfaces/ProductService.class
+com/api_rest/items_db_II/models/Product.class
+com/api_rest/items_db_II/config/ConfigSpring.class
+com/api_rest/items_db_II/domain/service/ProductServiceImpl.class
+com/api_rest/items_db_II/ItemsDbIiApplication.class
+com/api_rest/items_db_II/controllers/ProductControllerRest.class
