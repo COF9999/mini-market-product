@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
 
     private ObjectMapper objectMapper;
 
-    public ProductServiceImpl(ProductRepository productRepository,RedisTemplate<String,Object> redisTemplateProduct,ObjectMapper objectMapper){
+    public ProductServiceImpl(ProductRepository productRepository, RedisTemplate<String, Object> redisTemplateProduct, ObjectMapper objectMapper) {
         this.productRepository = productRepository;
         this.redisTemplateProduct = redisTemplateProduct;
         this.objectMapper = objectMapper;
@@ -41,20 +41,20 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<Product> getProducts(){
+    public List<Product> getProducts() {
         return productRepository.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Product getProduct(String id){
-        return productRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("Id: "+id+" No encontrado"));
+    public Product getProduct(String id) {
+        return productRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Id: " + id + " No encontrado"));
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Product getProductByName(String name){
-        return productRepository.getProductByName(name).orElseThrow(()-> new IllegalArgumentException("Producto con el nombre : "+name+" no encontrado"));
+    public Product getProductByName(String name) {
+        return productRepository.getProductByName(name).orElseThrow(() -> new IllegalArgumentException("Producto con el nombre : " + name + " no encontrado"));
     }
 
     @Override
@@ -64,12 +64,13 @@ public class ProductServiceImpl implements ProductService {
         String redisKey = CACHE_PREFIX + name;
         String listObj = (String) redisTemplateProduct.opsForValue().get(redisKey);
         System.out.println(listObj);
-        if (listObj != null){
+        if (listObj != null) {
             try {
-                List<Product> productListFromRedis = objectMapper.readValue(listObj, new TypeReference<List<Product>>() {});
+                List<Product> productListFromRedis = objectMapper.readValue(listObj, new TypeReference<List<Product>>() {
+                });
                 System.out.println("ENTRO llevar data de redis");
                 return productListFromRedis;
-            }catch (JsonProcessingException e){
+            } catch (JsonProcessingException e) {
                 System.out.println(e);
             }
 
